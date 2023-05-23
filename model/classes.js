@@ -29,6 +29,15 @@ class Role {
       this.deletedDate = deletedDate;
     }
   }
+
+  class PDF extends InstructionGuide {
+    constructor(title, subject, keywords, createdDate, deletedDate, numberOfPages) {
+      super(title, subject, keywords, createdDate, deletedDate);
+      this.numberOfPages = numberOfPages;
+    }
+  }
+
+  
   
   class Video extends InstructionGuide {
     constructor(title, subject, keywords, createdDate, deletedDate, duration) {
@@ -37,12 +46,7 @@ class Role {
     }
   }
   
-  class PDF extends InstructionGuide {
-    constructor(title, subject, keywords, createdDate, deletedDate, numberOfPages) {
-      super(title, subject, keywords, createdDate, deletedDate);
-      this.numberOfPages = numberOfPages;
-    }
-  }
+  
   
   // UpdatedVideo class extending Video
   class UpdatedVideo extends Video {

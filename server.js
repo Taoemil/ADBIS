@@ -1,25 +1,25 @@
-// Import required modules
 const express = require('express');
 const path = require('path');
-const mime = require('mime');
-const fs = require('fs');
+const { getPDFByQuery } = require('./controller/endpoints');
 
-
-
-// Create an instance of Express
+// Create an Express application
 const app = express();
+const port = 3000; // Change this to the desired port number
 
+// Serve static files from the "view" directory
+app.use(express.static('view'));
 
-
-
-
-// Middleware
+// Define the default route to serve the frontend.html file
 app.get('/', (req, res) => {
-  res.sendFile('searchTemplate.html', {root: 'view'});
+  res.sendFile(path.join(__dirname, 'view', 'frontend.html'));
 });
+
+// Define the search endpoint
+app.get('/search', getPDFByQuery);
 
 // Start the server
-const port = 3000;
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });
+
+module.exports = app;
