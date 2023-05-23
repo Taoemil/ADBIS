@@ -1,12 +1,21 @@
 // Import required modules
 const express = require('express');
+const path = require('path');
+const mime = require('mime');
+const fs = require('fs');
+
+
 
 // Create an instance of Express
 const app = express();
 
-// Define routes
+
+
+
+
+// Middleware
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.sendFile('searchTemplate.html', {root: 'view'});
 });
 
 // Start the server
