@@ -1,46 +1,69 @@
-/* frontend.css */
-
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  .input-container {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  #search-input {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  #search-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #results {
-    margin-top: 20px;
-  }
-  
-  #results a {
-    display: block;
-    margin-bottom: 10px;
-    color: #007bff;
-    text-decoration: none;
-  }
-  
-  #results a:hover {
-    text-decoration: underline;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+input[type="text"],
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+#search-input {
+  width: 300px;
+  margin-right: 10px;
+}
+
+#search-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#results {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#results p {
+  font-weight: bold;
+}
+
+#results h3 {
+  margin-top: 20px;
+}
+
+#results h4 {
+  margin: 10px 0;
+}
+
+#results b {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#results a {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+#results hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}

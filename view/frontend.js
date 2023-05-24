@@ -20,25 +20,35 @@ function displayPDFs(pdfs) {
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '';
 
-  // Loop through the PDFs and create HTML elements to display them
-  /*
+  // Display the total number of objects returned
+  const totalObjects = pdfs.length;
+  const totalCountElement = document.createElement('p');
+  totalCountElement.textContent = `Antal vejledninger fundet: ${totalObjects}`;
+  resultsContainer.appendChild(totalCountElement);
+
+  // Loop through the PDFs and create HTML elements to display them 
   for (const pdf of pdfs) {
-    const pdfElement = document.createElement('div');
-    pdfElement.textContent = pdf.link; // You can customize how you want to display the PDF information
-    resultsContainer.appendChild(pdfElement);
+    const titleElement = document.createElement('h3');
+    titleElement.textContent = `Titel: ${pdf.title}`;
+    resultsContainer.appendChild(titleElement);
+
+    const subjectElement = document.createElement('h4');
+    subjectElement.textContent = `Emne: ${pdf.subject}`;
+    resultsContainer.appendChild(subjectElement);
+
+    const numberOfPagesElement = document.createElement('b');
+    subjectElement.textContent = `antal sider: ${pdf.numberOfPages}`;
+    resultsContainer.appendChild(numberOfPagesElement);
+
+    const linkElement = document.createElement('a');
+    linkElement.textContent = `Åbn PDF - ny fane`;
+    linkElement.href = pdf.link;
+    linkElement.target = '*'; // Open the link in a new tab
+    resultsContainer.appendChild(linkElement);
+
+    const separatorElement = document.createElement('hr');
+    resultsContainer.appendChild(separatorElement);
   }
-  */
-
-  for (const pdf of pdfs) {
-    const pdfLink = document.createElement('a');
-    pdfLink.textContent = pdf.link;
-    pdfLink.href = pdf.link;
-    pdfLink.target = '_blank'; // Open the link in a new tab
-
-    const pdfElement = document.createElement('div');
-    pdfElement.appendChild(pdfLink);
-    resultsContainer.appendChild(pdfElement); }
-
 }
 
 // Example usage: search for PDFs when a button is clicked
