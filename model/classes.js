@@ -21,18 +21,20 @@ class Role {
   
   // InstructionGuide class and its subclasses (Video and PDF)
   class InstructionGuide {
-    constructor(title, subject, keywords, createdDate, deletedDate) {
+    constructor(title, subject, keywords, createdDate, deletedDate, version) {
       this.title = title;
       this.subject = subject;
       this.keywords = keywords;
       this.createdDate = createdDate;
       this.deletedDate = deletedDate;
+      this.version = version;
+
     }
   }
 
   class PDF extends InstructionGuide {
-    constructor(title, subject, keywords, createdDate, deletedDate, numberOfPages) {
-      super(title, subject, keywords, createdDate, deletedDate);
+    constructor(title, subject, keywords, createdDate, deletedDate, numberOfPages, version) {
+      super(title, subject, keywords, createdDate, deletedDate, version);
       this.numberOfPages = numberOfPages;
     }
   }
@@ -41,7 +43,7 @@ class Role {
   
   class Video extends InstructionGuide {
     constructor(title, subject, keywords, createdDate, deletedDate, duration) {
-      super(title, subject, keywords, createdDate, deletedDate);
+      super(title, subject, keywords, createdDate, deletedDate, version);
       this.duration = duration;
     }
   }
@@ -80,14 +82,28 @@ class Role {
       this.favoritedDate = favoritedDate;
     }
   }
-  
+
+  // UpdatedPDF class extending PDF
+  class PDFhandlling extends Favorite {
+    constructor(subject, keywords, createdDate, deletedDate, numberOfPages, updatedDate) {
+      super(favoritedDate);
+      this.favoritedDate = favoritedDate;
+    }
+  }
+
+  // UpdatedPDF class extending PDF
+  class VideoHandling extends Favorite {
+    constructor(favoritedDate) {
+      super(favoritedDate);
+      this.favoritedDate = favoritedDate;
+    }
+  }
+
   // Subject class
   class Subject {
-    constructor(name, total, description, keywords, createdDate, deletedDate) {
-      this.name = name;
-      this.total = total;
-      this.description = description;
-      this.keywords = keywords;
+    constructor(title, number, createdDate, deletedDate) {
+      this.title = title;
+      this.number = number;
       this.createdDate = createdDate;
       this.deletedDate = deletedDate;
     }
@@ -105,5 +121,7 @@ class Role {
     UpdatedPDF,
     Notification,
     Favorite,
+    PDFhandlling,
+    VideoHandling,
     Subject
   };

@@ -26,6 +26,7 @@ const db = new sqlite3.Database(databaseFile, sqlite3.OPEN_READWRITE | sqlite3.O
     createdDate TEXT,
     deletedDate TEXT,
     numberOfPages INTEGER,
+    version INTEGER,
     pdfData BLOB,
     link TEXT
   )`, (err) => {
@@ -36,15 +37,16 @@ const db = new sqlite3.Database(databaseFile, sqlite3.OPEN_READWRITE | sqlite3.O
     }
   });
   */
-/*
+
+  /*
     // Create a new PDF object 
-    const pdf = new PDF('HR Sag Manager rolle', 'HR-medarbejder/øvrige', 'manager, rolle, HR, sager ', '2023-05-24', '2023-05-30', 3);
+    const pdf = new PDF('Elementoversigt - kompensation', 'Løn', 'kompensation, lønning, aflønning', '2023-05-24', '2023-05-30', 37, 1);
     pdf.pdfData = 'PDF binary data'; // Set the PDF binary data (you need to replace this with actual binary data)
-    pdf.link = 'https://oes.dk/media/37203/m25-hr-sag-manager-rollen.pdf'; // Set the PDF link
+    pdf.link = 'https://oes.dk/media/45507/elementoversigt-kompensation.pdf'; // Set the PDF link
   
     // Prepare the INSERT statement
-    const insertQuery = `INSERT INTO pdfTable (title, subject, keywords, createdDate, deletedDate, numberOfPages, pdfData, link) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
-    const values = [pdf.title, pdf.subject, pdf.keywords, pdf.createdDate, pdf.deletedDate, pdf.numberOfPages, pdf.pdfData, pdf.link];
+    const insertQuery = `INSERT INTO pdfTable (title, subject, keywords, createdDate, deletedDate, numberOfPages, version, pdfData, link) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+    const values = [pdf.title, pdf.subject, pdf.keywords, pdf.createdDate, pdf.deletedDate, pdf.numberOfPages, pdf.version, pdf.pdfData, pdf.link];
   
     // Execute the INSERT statement
     db.run(insertQuery, values, function(err) {
@@ -54,8 +56,8 @@ const db = new sqlite3.Database(databaseFile, sqlite3.OPEN_READWRITE | sqlite3.O
         console.log(`Inserted PDF with ID: ${this.lastID}`);
       }
     });
-
-  */
+*/
+  
 
 
 
