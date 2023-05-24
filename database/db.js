@@ -35,8 +35,8 @@ const db = new sqlite3.Database(databaseFile, sqlite3.OPEN_READWRITE | sqlite3.O
       console.log('pdfTable created successfully.');
     }
   });
-  
-*/
+  */
+/*
     // Create a new PDF object 
     const pdf = new PDF('HR Sag Manager rolle', 'HR-medarbejder/øvrige', 'manager, rolle, HR, sager ', '2023-05-24', '2023-05-30', 3);
     pdf.pdfData = 'PDF binary data'; // Set the PDF binary data (you need to replace this with actual binary data)
@@ -55,7 +55,7 @@ const db = new sqlite3.Database(databaseFile, sqlite3.OPEN_READWRITE | sqlite3.O
       }
     });
 
-    
+  */
 
 
 

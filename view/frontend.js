@@ -12,7 +12,7 @@ function searchPDFs(query) {
     .catch(error => {
       console.error('An error occurred:', error);
     });
-}
+} 
 
 // Function to display the PDFs
 function displayPDFs(pdfs) {
