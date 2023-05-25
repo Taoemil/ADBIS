@@ -16,7 +16,7 @@ const db = new sqlite3.Database(databaseFile, sqlite3.OPEN_READWRITE | sqlite3.O
   }
 });
 
-/*
+
   // Create the 'pdfTable' table if it doesn't exist
   db.run(`CREATE TABLE IF NOT EXISTS pdfTable (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -36,7 +36,7 @@ const db = new sqlite3.Database(databaseFile, sqlite3.OPEN_READWRITE | sqlite3.O
       console.log('pdfTable created successfully.');
     }
   });
-  */
+  
 
   /*
     // Create a new PDF object 

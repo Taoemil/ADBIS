@@ -1,6 +1,6 @@
 /* frontend.css */
 
-/* Reset default styles */
+/* default styles */
 body, h1, h3, h4, p, ul, li, a, input, button {
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@ body, h1, h3, h4, p, ul, li, a, input, button {
   font-family: Arial, sans-serif;
 }
 
-/* Page layout */
+/* Side layout */
 body {
   background-color: #f1f1f1;
   padding: 20px;
@@ -51,12 +51,12 @@ h1 {
 }
 
 .menu-item:hover {
-  background-color: #8CC63F; /* Green background color on hover */
+  background-color: #8CC63F; /* Grøn baggrund */
   border-radius: 5px;
 }
 
 .menu-item a:hover {
-  color: #fff; /* Text color on hover */
+  color: #fff; /* Farve på tekst */
 }
 
 #search-input {

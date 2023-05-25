@@ -1,32 +1,19 @@
-// frontend.js
-
-// Function to search for PDFs by query
-function searchPDFs(query) {
-  // Make an HTTP GET request to the search endpoint
-  fetch(`/search?query=${query}`)
-    .then(response => response.json())
-    .then(data => {
-      // Handle the response data
-      displayPDFs(data);
-    })
-    .catch(error => {
-      console.error('An error occurred:', error);
-    });
-} 
-
-// Function to display the PDFs
+  
+  // Display funktion
 function displayPDFs(pdfs) {
-  // Clear the existing results
+  // Fjern eksisterende resultater
   const resultsContainer = document.getElementById('results');
   resultsContainer.innerHTML = '';
 
-  // Display the total number of objects returned
+  // Returner totalt antal objekter 
   const totalObjects = pdfs.length;
   const totalCountElement = document.createElement('p');
-  totalCountElement.textContent = `Antal vejledninger fundet: ${totalObjects}`;
+  totalCountElement.textContent = `Antal vejledninger fundet: ${totalObjects}
+  
+  `; 
   resultsContainer.appendChild(totalCountElement);
 
-  // Loop through the PDFs and create HTML elements to display them 
+  // Loop gennem pdfs og lav HTML
   for (const pdf of pdfs) {
     const titleElement = document.createElement('h3');
     titleElement.textContent = `Titel: ${pdf.title}`;
@@ -51,7 +38,7 @@ function displayPDFs(pdfs) {
   }
 }
 
-// Example usage: search for PDFs when a button is clicked
+// Brugsmønster: Søge-button
 const searchButton = document.getElementById('search-button');
 const searchInput = document.getElementById('search-input');
 

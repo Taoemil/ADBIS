@@ -1,4 +1,4 @@
-// Role class and its subclasses (Administrator and EndUser)
+// Role klasse
 class Role {
     constructor(email, name, password) {
       this.email = email;
@@ -32,6 +32,7 @@ class Role {
     }
   }
 
+  // PDF class extending InstructionGuide
   class PDF extends InstructionGuide {
     constructor(title, subject, keywords, createdDate, deletedDate, numberOfPages, version) {
       super(title, subject, keywords, createdDate, deletedDate, version);
@@ -40,15 +41,13 @@ class Role {
   }
 
   
-  
+    // Video class extending InstructionGuide
   class Video extends InstructionGuide {
     constructor(title, subject, keywords, createdDate, deletedDate, duration) {
       super(title, subject, keywords, createdDate, deletedDate, version);
       this.duration = duration;
     }
   }
-  
-  
   
   // UpdatedVideo class extending Video
   class UpdatedVideo extends Video {
