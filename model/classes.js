@@ -1,4 +1,4 @@
-// Role klasse
+// Role klasse, super
 class Role {
     constructor(email, name, password) {
       this.email = email;
@@ -6,21 +6,21 @@ class Role {
       this.password = password;
     }
   }
-  
+  // adminstrator klasse, sub
   class Administrator extends Role {
     constructor(email, name, password) {
       super(email, name, password);
     }
   }
-  
+    // enduser klasse, sub
   class EndUser extends Role {
     constructor(email, name, password) {
       super(email, name, password);
     }
   }
   
-  // InstructionGuide class and its subclasses (Video and PDF)
-  class InstructionGuide {
+// instruicitonguide klasse, super
+class InstructionGuide {
     constructor(title, subject, keywords, createdDate, deletedDate, version) {
       this.title = title;
       this.subject = subject;
@@ -32,8 +32,8 @@ class Role {
     }
   }
 
-  // PDF class extending InstructionGuide
-  class PDF extends InstructionGuide {
+    // PDF klasse, sub
+    class PDF extends InstructionGuide {
     constructor(title, subject, keywords, createdDate, deletedDate, numberOfPages, version) {
       super(title, subject, keywords, createdDate, deletedDate, version);
       this.numberOfPages = numberOfPages;
@@ -41,15 +41,15 @@ class Role {
   }
 
   
-    // Video class extending InstructionGuide
-  class Video extends InstructionGuide {
+    // Video klasse, sub
+    class Video extends InstructionGuide {
     constructor(title, subject, keywords, createdDate, deletedDate, duration) {
       super(title, subject, keywords, createdDate, deletedDate, version);
       this.duration = duration;
     }
   }
   
-  // UpdatedVideo class extending Video
+  // UpdatedVideo klasse extends Video
   class UpdatedVideo extends Video {
     constructor(title, subject, keywords, createdDate, deletedDate, duration, updatedDate) {
       super(title, subject, keywords, createdDate, deletedDate, duration);
@@ -57,7 +57,7 @@ class Role {
     }
   }
   
-  // UpdatedPDF class extending PDF
+  // UpdatedPDF klasse extends PDF
   class UpdatedPDF extends PDF {
     constructor(title, subject, keywords, createdDate, deletedDate, numberOfPages, updatedDate) {
       super(title, subject, keywords, createdDate, deletedDate, numberOfPages);
@@ -65,7 +65,7 @@ class Role {
     }
   }
   
-  // Notification class
+  // Notification klasse
   class Notification {
     constructor(sentDate, message, read, version) {
       this.sentDate = sentDate;
@@ -75,14 +75,14 @@ class Role {
     }
   }
   
-  // Favorite class
+  // Favorite klasse
   class Favorite {
     constructor(favoritedDate) {
       this.favoritedDate = favoritedDate;
     }
   }
 
-  // UpdatedPDF class extending PDF
+  // PDFhandlling klasse extends PDF
   class PDFhandlling extends Favorite {
     constructor(subject, keywords, createdDate, deletedDate, numberOfPages, updatedDate) {
       super(favoritedDate);
@@ -90,7 +90,7 @@ class Role {
     }
   }
 
-  // UpdatedPDF class extending PDF
+  // VideoHandling klasse extends video
   class VideoHandling extends Favorite {
     constructor(favoritedDate) {
       super(favoritedDate);
@@ -98,7 +98,7 @@ class Role {
     }
   }
 
-  // Subject class
+  // Subject klasse
   class Subject {
     constructor(title, number, createdDate, deletedDate) {
       this.title = title;
@@ -108,7 +108,7 @@ class Role {
     }
   }
   
-  // Exporting the classes
+  // Eksporter klasser
   module.exports = {
     Role,
     Administrator,
