@@ -1,5 +1,20 @@
-  
-  // Display funktion
+ // frontend.js
+// Function to search for PDFs by query
+function searchPDFs(query) {
+  // Make an HTTP GET request to the search endpoint
+  fetch(`/search?query=${query}`)
+    .then(response => response.json())
+    .then(data => {
+      // Handle the response data
+      displayPDFs(data);
+    })
+     .catch(error => {
+       console.error('An error occurred:', error);
+     });
+    } 
+ 
+ 
+ // Display funktion
 function displayPDFs(pdfs) {
   // Fjern eksisterende resultater
   const resultsContainer = document.getElementById('results');
